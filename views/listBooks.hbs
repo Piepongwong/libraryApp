@@ -1,0 +1,25 @@
+{{#each books}}
+<div class="row accordion" id="accordionExample">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header" id="heading{{@index}}">
+                <h5 class="card-title">Book</h5>
+                <p class="card-text">Title: {{this.title}}</p>
+                <p class="card-text">Year: {{this.year}} </p>
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="true" aria-controls="collapse{{@index}}">
+                    Authors
+                </button>
+            </div>
+            
+            <div id="collapse{{@index}}" class="collapse" aria-labelledby="heading{{@index}}" data-parent="#accordionExample">
+                <div class="card-body">
+                {{#each this.author}}
+                    <p>{{this.firstname}}</p>
+                {{/each}}      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+

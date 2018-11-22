@@ -1,0 +1,18 @@
+{{#if bookCreated}}
+    <p>Book created- Wanna create another one?</p>
+{{/if}}
+<br>
+<form action="createBook" method="POST">
+    <div class="form-group">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="year" placeholder="year">
+    </div>
+    <label>Select the Author(s)</label>
+    <select class="form-control" name="authors" type="text" multiple="{{authors.length}}">
+        {{#each authors}}
+            <option value="{{this.id}}">{{this.firstname}} {{this.lastname}}</option>
+        {{/each}}
+    </select>
+    <br>
+    <input type="submit" value="submit">
+</form>
